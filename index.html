@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>resizer</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link href="style.css" rel="stylesheet" />
+    <!--<script src="http://code.jquery.com/jquery-2.0.3.min.js" data-semver="2.0.3" data-require="jquery"></script>-->
+    <script data-semver="1.2.13" src="http://code.angularjs.org/1.2.13/angular.js" data-require="angular.js@1.2.x"></script>
+    <script src="app.js"></script>
+    <!--<script src="resizer.js"></script>-->
+  </head>
+
+  <body ng-controller="MainCtrl">
+
+  	<div id="topnav">Top navbar</div>
+  
+  	<div id="sidebar">
+  		<h3>Side navbar</h3>
+  	</div>
+  
+  	<div id="content">
+
+  		<div id="top-content">Top content <p>{{content}}</p></div>
+  
+  		<div id="bottom-content">Bottom content</div>
+  
+  <my-directive id="content-resizer" 
+  			direction="horizontal" 
+  			height="6" 
+  			top="#top-content" 
+  			bottom="#bottom-content"></my-directive>
+  		<!--<div id="content-resizer" 
+  			resizer="horizontal" 
+  			resizer-height="6" 
+  			resizer-top="#top-content" 
+  			resizer-bottom="#bottom-content">
+  		</div>-->
+  
+  	</div>
+  <my-directive id="sidebar-resizer"
+      direction="vertical"
+      width="6" 
+      left="#sidebar" 
+      right="#content" 
+      max="400">
+  </my-directive>
+
+ 
+  	<!--<div id="sidebar-resizer" 
+  		resizer="vertical" 
+  		resizer-width="6" 
+  		resizer-left="#sidebar" 
+  		resizer-right="#content"
+  		resizer-max="400">
+  	</div>-->
+  	
+  </body>
+
+</html>
